@@ -30,7 +30,6 @@ const questions = [
 ]
 
 let clicked = []
-let correctAnswers = []
 let score = 0
 
 scoreDisplay.textContent = score
@@ -89,7 +88,6 @@ function checkAnswer(
 ) {
   if (optionIndex === correctAnswer) {
     score++
-    correctAnswers.push(option)
     scoreDisplay.textContent = score
     addResult(questionBox, 'Correct!', 'correct')
   } else {
