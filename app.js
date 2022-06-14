@@ -104,7 +104,5 @@ function addResult(questionBox, answer, className) {
   answerDisplay.classList.remove('wrong')
   answerDisplay.classList.remove('correct')
   answerDisplay.classList.add(className)
-  answerDisplay.textContent = ''
   answerDisplay.textContent = answer
-  questionBox.append(answerDisplay)
 }
