@@ -1,0 +1,81 @@
+.app {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.questions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.question-box {
+  margin: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px;
+  padding: 0px 40px 10px 40px;
+  background-color: rgb(21, 21, 21);
+  color: rgb(230, 230, 230);
+}
+
+.question-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-button {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color:rgb(75, 134, 111);
+  color: white;
+}
+
+button:disabled {
+  background-color: darkgray;
+  color: rgb(136, 134, 134);
+}
+
+.back-button {
+  margin: 20px;
+  background-color: darksalmon;
+}
+
+select {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+}
+
+.answer-display {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.answer-display.correct {
+  color: rgb(211, 211, 117);
+}
+
+.answer-display.wrong {
+  color: rgb(211, 134, 117);
+}
+
+.question-box h1 {
+  text-align: left;
+  color:rgb(117, 136, 211)
+}
