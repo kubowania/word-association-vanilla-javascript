@@ -29,7 +29,6 @@ const questions = [
   },
 ]
 
-let clicked = []
 let score = 0
 
 scoreDisplay.textContent = score
@@ -58,11 +57,10 @@ function populateQuestions() {
       const questionButton = document.createElement('button')
       questionButton.classList.add('question-button')
       questionButton.textContent = option
-      questionButton.addEventListener('click', () =>
+      questionButton.addEventListener('click', (event) =>
         checkAnswer(
+          event,
           questionBox,
-          questionButton,
-          option,
           optionIndex + 1,
           question.correct
         )
@@ -80,23 +78,25 @@ function populateQuestions() {
 populateQuestions()
 
 function checkAnswer(
+  event,
   questionBox,
-  questionButton,
-  option,
   optionIndex,
   correctAnswer
 ) {
   if (optionIndex === correctAnswer) {
     score++
-    scoreDisplay.textContent = score
     addResult(questionBox, 'Correct!', 'correct')
   } else {
     score--
-    scoreDisplay.textContent = score
     addResult(questionBox, 'Wrong!', 'wrong')
   }
-  clicked.push(option)
-  questionButton.disabled = clicked.includes(option)
+  if (optionIndex == 1) {
+    event.target.nextElementSibling.disabled = true
+  } else {
+    event.target.previousElementSibling.disabled = true
+  }
+  scoreDisplay.textContent = score
+  event.target.disabled = true
 }
 
 function addResult(questionBox, answer, className) {
