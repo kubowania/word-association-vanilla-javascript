@@ -90,6 +90,11 @@ function checkAnswer(
     score--
     addResult(questionBox, 'Wrong!', 'wrong')
   }
+  if (optionIndex == 1) {
+    event.target.nextElementSibling.disabled = true
+  } else {
+    event.target.previousElementSibling.disabled = true
+  }
   scoreDisplay.textContent = score
   event.target.disabled = true
 }
